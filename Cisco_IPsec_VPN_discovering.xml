@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.0</version>
-    <date>2018-10-05T20:35:15Z</date>
+    <date>2018-10-06T05:44:07Z</date>
     <groups>
         <group>
             <name>Templates SNMP Devices</name>
@@ -61,7 +61,7 @@
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <snmp_oid>CISCO-IPSEC-FLOW-MONITOR-MIB::cikeTunActiveTime.{#SNMPINDEX}</snmp_oid>
-                            <key>cikeTunActiveTime[{#SNMPINDEX}]</key>
+                            <key>cikeTunActiveTime[{#LOCAL}---{#REMOTE}]</key>
                             <delay>1m</delay>
                             <history>1w</history>
                             <trends>90d</trends>
@@ -121,7 +121,7 @@
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <snmp_oid>CISCO-IPSEC-FLOW-MONITOR-MIB::cikeTunInOctets.{#SNMPINDEX}</snmp_oid>
-                            <key>cikeTunInOctets[{#SNMPINDEX}]</key>
+                            <key>cikeTunInOctets[{#LOCAL}---{#REMOTE}]</key>
                             <delay>1m</delay>
                             <history>1w</history>
                             <trends>90d</trends>
@@ -181,7 +181,7 @@
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <snmp_oid>CISCO-IPSEC-FLOW-MONITOR-MIB::cikeTunInPkts.{#SNMPINDEX}</snmp_oid>
-                            <key>cikeTunInPkts[{#SNMPINDEX}]</key>
+                            <key>cikeTunInPkts[{#LOCAL}---{#REMOTE}]</key>
                             <delay>1m</delay>
                             <history>1w</history>
                             <trends>90d</trends>
@@ -241,7 +241,7 @@
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <snmp_oid>CISCO-IPSEC-FLOW-MONITOR-MIB::cikeTunOutOctets.{#SNMPINDEX}</snmp_oid>
-                            <key>cikeTunOutOctets[{#SNMPINDEX}]</key>
+                            <key>cikeTunOutOctets[{#LOCAL}---{#REMOTE}]</key>
                             <delay>1m</delay>
                             <history>1w</history>
                             <trends>90d</trends>
@@ -301,7 +301,7 @@
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <snmp_oid>CISCO-IPSEC-FLOW-MONITOR-MIB::cikeTunOutPkts.{#SNMPINDEX}</snmp_oid>
-                            <key>cikeTunOutPkts[{#SNMPINDEX}]</key>
+                            <key>cikeTunOutPkts[{#LOCAL}---{#REMOTE}]</key>
                             <delay>1m</delay>
                             <history>1w</history>
                             <trends>90d</trends>
@@ -361,7 +361,7 @@
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <snmp_oid>CISCO-IPSEC-FLOW-MONITOR-MIB::cikeTunStatus.{#SNMPINDEX}</snmp_oid>
-                            <key>cikeTunStatus[{#SNMPINDEX}]</key>
+                            <key>cikeTunStatus[{#LOCAL}---{#REMOTE}]</key>
                             <delay>1m</delay>
                             <history>1w</history>
                             <trends>90d</trends>
@@ -419,7 +419,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Cisco IPsec VPN discovering:cikeTunStatus[{#SNMPINDEX}].last()}=0 or {Cisco IPsec VPN discovering:cikeTunStatus[{#SNMPINDEX}].nodata(3m)}=1</expression>
+                            <expression>{Cisco IPsec VPN discovering:cikeTunStatus[{#LOCAL}---{#REMOTE}].last()}=0 or {Cisco IPsec VPN discovering:cikeTunStatus[{#LOCAL}---{#REMOTE}].nodata(3m)}=1</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Status of CardStandard  tunnel not up or no data received</name>
