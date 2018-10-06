@@ -17,3 +17,9 @@ SNMPv2-CONF.my
 SNMPv2-TC.my
 CISCO-MEDIA-GATEWAY-MIB.my
 CISCO-SMI.my
+
+update:
+
+Cisco_IPsec_VPN_OIDs_discovering - is clone of template Cisco_IPsec_VPN_discovering
+This template discover VPN tunnels by OIDs. MIB files no needed.
+All you need to do is import template and add it to the host.
