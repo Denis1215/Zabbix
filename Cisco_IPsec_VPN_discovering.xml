@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.0</version>
-    <date>2018-10-06T05:44:07Z</date>
+    <date>2018-10-07T06:57:31Z</date>
     <groups>
         <group>
             <name>Templates SNMP Devices</name>
@@ -422,7 +422,7 @@
                             <expression>{Cisco IPsec VPN discovering:cikeTunStatus[{#LOCAL}---{#REMOTE}].last()}=0 or {Cisco IPsec VPN discovering:cikeTunStatus[{#LOCAL}---{#REMOTE}].nodata(3m)}=1</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
-                            <name>Status of CardStandard  tunnel not up or no data received</name>
+                            <name>Status of tunnel {#LOCAL}---{#REMOTE} not up or no data received</name>
                             <correlation_mode>0</correlation_mode>
                             <correlation_tag/>
                             <url/>
